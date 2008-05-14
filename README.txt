@@ -12,7 +12,9 @@ Get your Flickr user id at http://idgettr.com/
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* For now it just fetches the latest 30 photos
+
+* This is not meant to upload photos to Flickr
 
 == SYNOPSIS:
 
@@ -71,7 +73,7 @@ photo.original_url
 
 (The MIT License)
 
-Copyright (c) 2008 FIX
+Copyright (c) 2008 Ismael Celis
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
