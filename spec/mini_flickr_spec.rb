@@ -8,7 +8,7 @@ end
 describe MiniFlickr::Base,"Fetching a Flickr stream" do
   
   before(:each) do
-    @api_key = '3e1f4be8ca3695398b7b15497d9a9b86'
+    @api_key = 'your-api-key-here'
     @user_id = '96045892@N00'
     MyFlickr.connect_to_flickr(
       :api_key  => @api_key,

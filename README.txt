@@ -1,10 +1,14 @@
 = mini_flickr
 
-* http://github.com/ismasan
+* http://github.com/ismasan/mini_flickr/tree/master
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Simple gem to fetch your Flickr photos through Flickr's REST API
+
+Get your Flickr API_KEY at http://www.flickr.com/services/api/keys/
+
+Get your Flickr user id at http://idgettr.com/
 
 == FEATURES/PROBLEMS:
 
@@ -12,15 +16,56 @@ FIX (describe your package)
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  class MyFlickr
+    include MiniFlickr::Base
+    connect_to_flickr :api_key => 'your-api-key', :user_id => 'your-user-id'
+  end
+
+  flickr = MyFlickr.new
+
+  <% flickr.photos.each do |photo| %>
+	<a href="<%= photo.medium_url %>">
+		<img src="<%= photo.small %>" />
+	</a>
+  <% end %>
+
+=== Each photo has:
+
+==== Source image urls for sizes
+
+photo.square
+
+photo.thumbnail
+
+photo.small
+
+photo.medium
+
+photo.original
+
+==== Page urls for sizes
+
+photo.square_url
+
+photo.thumbnail_url
+
+photo.small_url
+
+photo.medium_url
+
+photo.original_url
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* Hpricot (sudo gem install hpricot)
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* git clone git://github.com/ismasan/mini_flickr.git
+
+* cd mini_flickr
+
+* rake install_gem
 
 == LICENSE:
 
