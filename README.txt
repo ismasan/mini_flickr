@@ -31,6 +31,16 @@ Get your Flickr user id at http://idgettr.com/
 	</a>
   <% end %>
 
+== TESTING:
+
+This gem uses Rspec for testing. Run the existing specs with rake spec.
+
+You'll need to add your own API key in order for the test suite to work.
+
+Do so by storing it in a file called/api_key.txt
+
+If you contribute, please write specs and make sure they pass.
+
 === Each photo has:
 
 ==== Source image urls for sizes
