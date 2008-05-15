@@ -2,3 +2,4 @@
 
 * 1 major enhancement:
   * Initial release
+  * Added post commit hook in github
