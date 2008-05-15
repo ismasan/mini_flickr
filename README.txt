@@ -18,6 +18,8 @@ Get your Flickr user id at http://idgettr.com/
 
 == SYNOPSIS:
 
+=== Class level configuration
+
   class MyFlickr
     include MiniFlickr::Base
     connect_to_flickr :api_key => 'your-api-key', :user_id => 'your-user-id'
@@ -30,6 +32,27 @@ Get your Flickr user id at http://idgettr.com/
 		<img src="<%= photo.small %>" />
 	</a>
   <% end %>
+
+=== Instance level configuration
+
+There's also a utility class that takes api_key and user_id as parameters.
+This means you can configure Flickr accounts per-instance (for example your site has many users, each with their own Flickr photos).
+
+flickr = MiniFlickr::Simple.new('some-key', 'some-user-id')
+
+flickr.photos # => collection of MiniFlickr::Photo objects with sizes and url's (see above)
+
+You can also use this as a value object for ActiveRecord, for example.
+
+class Flickr < MiniFlickr::Simple; end
+
+class User < ActiveRecord::Base
+	composed_of :flickr, :mappings => %w(api_key flickr_user_id)
+end
+
+user = User.create(:name => 'Ismael', :api_key => 'some-api-key', :flickr_user_id => 'some-flickr-userid')
+
+user.flickr.photos # collection of flickr photos
 
 == TESTING:
 
